@@ -12,7 +12,9 @@ public class Test {
 		InvocationHandler handler = new HelloWorldHandler(hw);
 
 		ClassLoader cl = hw.getClass().getClassLoader();
+		// proxy对象是在运行时才产生的
 		HelloWorld proxy = (HelloWorld) Proxy.newProxyInstance(cl, hw.getClass().getInterfaces(), handler);
+		
 		proxy.sayHelloWorld();
 	}
 }
