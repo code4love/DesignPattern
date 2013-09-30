@@ -33,14 +33,13 @@ import java.util.List;
  * @author Lubing Zhang
  * 
  */
-public class Client {
+public class Tester {
 
 	public static void main(String args[]) {
-
+		Visitor vistor = new VisitorImpl();
 		for (Element e : mockElements()) {
-			e.regist(new VisitorImpl());
+			e.regist(vistor);
 		}
-
 	}
 
 	private static List<Element> mockElements() {
