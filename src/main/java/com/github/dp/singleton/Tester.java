@@ -24,19 +24,40 @@
 
 package com.github.dp.singleton;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+
 /**
  * Singleton.
  * 
- * @author Lubing Zhang
+ * @author hadoopor@yahoo.com
  * 
  */
-public class Client {
+public class Tester {
 
 	public static void main(String[] args) {
+		ExecutorService executorService = Executors.newCachedThreadPool();
 
-		Singleton singleton = Singleton.getInstance();
-		singleton.operate();
+		for (int c = 0; c < 5; c++) {
+			executorService.execute(new TestRun());
+		}
 
+		executorService.shutdown();
+
+		try {
+			executorService.awaitTermination(Long.MAX_VALUE,
+					TimeUnit.NANOSECONDS);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static class TestRun implements Runnable {
+		public void run() {
+			System.out.println(Thread.currentThread().getName() + ",Singleton                  :" + Singleton.getInstance());
+			System.out.println(Thread.currentThread().getName() + ",Singleton With Inner Static:" + SingletonInerStatic.getInstance());
+		}
 	}
 
 }
