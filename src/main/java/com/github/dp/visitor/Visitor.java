@@ -26,12 +26,9 @@ package com.github.dp.visitor;
 
 /**
  * Visitor.
- * 
- * @author Lubing Zhang
- * 
  */
 public interface Visitor {
 
-	public void visit(ConcreteElement element);
+	void visit(Element element);
 
 }

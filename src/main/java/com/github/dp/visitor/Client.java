@@ -38,7 +38,7 @@ public class Client {
 	public static void main(String args[]) {
 
 		for (Element e : mockElements()) {
-			e.accept(new ConcreteVisitor());
+			e.regist(new VisitorImpl());
 		}
 
 	}
@@ -46,14 +46,14 @@ public class Client {
 	private static List<Element> mockElements() {
 		List<Element> elements = new ArrayList<Element>();
 
-		Element e1 = new ConcreteElement("Head First Design Patterns");
+		Element e1 = new ElementImpl("Head First Design Patterns");
 		elements.add(e1);
 
-		Element e2 = new ConcreteElement(
+		Element e2 = new ElementImpl(
 				"Refactoring Improving the Design of Existing Code");
 		elements.add(e2);
 
-		Element e3 = new ConcreteElement("Effective Java");
+		Element e3 = new ElementImpl("Effective Java");
 		elements.add(e3);
 
 		return elements;

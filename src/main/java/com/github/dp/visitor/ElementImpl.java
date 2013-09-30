@@ -26,14 +26,21 @@ package com.github.dp.visitor;
 
 /**
  * Visitor.
- * 
- * @author Lubing Zhang
- * 
  */
-public class ConcreteVisitor implements Visitor {
+public class ElementImpl implements Element {
 
-	public void visit(ConcreteElement element) {
-		System.out.println(element.getInfo());
+	private String name;
+
+	public ElementImpl(String name) {
+		this.name = name;
+	}
+
+	public String getInfo() {
+		return this.name;
+	}
+
+	public void regist(Visitor visitor) {
+		visitor.visit(this);
 	}
 
 }

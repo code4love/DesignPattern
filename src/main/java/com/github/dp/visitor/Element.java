@@ -26,14 +26,11 @@ package com.github.dp.visitor;
 
 /**
  * Visitor.
- * 
- * @author Lubing Zhang
- * 
  */
 public interface Element {
 
-	public String getInfo();
+	String getInfo();
 
-	public void accept(Visitor visitor);
+	void regist(Visitor visitor);
 
 }
