@@ -1,5 +1,5 @@
 package com.github.dp.proxy.dynamicproxy;
 
-public interface HelloWorld {
+public interface ProxyInterface {
     void sayHelloWorld() ;
 }

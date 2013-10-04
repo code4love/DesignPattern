@@ -37,7 +37,7 @@ public class Client {
 	public static void main(String args[]) {
 
 		prototype.changeStatus("Init");
-		prototype.showStatus();
+		prototype.showStatus();	
 		
 		Prototype clone = prototype.clone();
 		clone.showStatus();

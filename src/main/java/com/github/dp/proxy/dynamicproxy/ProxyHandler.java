@@ -3,7 +3,7 @@ package com.github.dp.proxy.dynamicproxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class HelloWorldHandler implements InvocationHandler {
+public class ProxyHandler implements InvocationHandler {
 
 	// 要代理的原始对象
 	private Object objOriginal;
@@ -14,7 +14,7 @@ public class HelloWorldHandler implements InvocationHandler {
 	 * @param obj
 	 *            要代理的原始对象。
 	 */
-	public HelloWorldHandler(Object obj) {
+	public ProxyHandler(Object obj) {
 		this.objOriginal = obj;
 	}
 
