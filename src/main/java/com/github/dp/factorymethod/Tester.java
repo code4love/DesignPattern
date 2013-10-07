@@ -27,14 +27,23 @@ package com.github.dp.factorymethod;
 /**
  * Factory Method.
  * 
- * @author Lubing Zhang
+ * @author Johnny Deng
  * 
  */
-public class ConcreteCreatorB extends Creator {
+public class Tester {
 
-	@Override
-	protected ConcreteProductB factoryMethod() {
-		return new ConcreteProductB();
+	public static void main(String[] args) {
+
+		Creator creator = new ConcreteFactoryA();
+
+		Product product = creator.create();
+		product.operation();
+
+		creator = new ConcreteFactoryB();
+
+		product = creator.create();
+		product.operation();
+
 	}
 
 }

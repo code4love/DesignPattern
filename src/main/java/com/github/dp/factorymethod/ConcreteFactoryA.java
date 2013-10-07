@@ -30,7 +30,7 @@ package com.github.dp.factorymethod;
  * @author Lubing Zhang
  * 
  */
-public class ConcreteCreatorA extends Creator {
+public class ConcreteFactoryA extends Creator {
 
 	@Override
 	protected ConcreteProductA factoryMethod() {

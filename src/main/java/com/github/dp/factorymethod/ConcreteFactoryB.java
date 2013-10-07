@@ -30,20 +30,11 @@ package com.github.dp.factorymethod;
  * @author Lubing Zhang
  * 
  */
-public class Client {
+public class ConcreteFactoryB extends Creator {
 
-	public static void main(String[] args) {
-
-		Creator creator = new ConcreteCreatorA();
-
-		Product product = creator.create();
-		product.operation();
-
-		creator = new ConcreteCreatorB();
-
-		product = creator.create();
-		product.operation();
-
+	@Override
+	protected ConcreteProductB factoryMethod() {
+		return new ConcreteProductB();
 	}
 
 }
